@@ -1,6 +1,6 @@
 import {Schema, model, Model, HydratedDocument} from 'mongoose';
 import {IUser} from '../types';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import {randomUUID} from 'crypto';
 
 const SALT_WORK_FACTOR = 10;

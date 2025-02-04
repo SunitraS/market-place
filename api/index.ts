@@ -16,6 +16,10 @@ app.use('/users', usersRouter);
 app.use('/categories', categoriesRouter);
 app.use('/products', productsRouter);
 
+app.get('/', (req, res) => {
+  res.send('Backend running');
+})
+
 const run = async () => {
   mongoose.set('strictQuery', false);
   await mongoose.connect(config.db);
@@ -28,5 +32,7 @@ const run = async () => {
     mongoose.disconnect();
   });
 };
+
+
 
 run().catch(console.error);
